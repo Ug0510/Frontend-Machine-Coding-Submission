@@ -173,7 +173,7 @@ const ReelViewer = ({ look, onComplete, isActive }) => {
 
       <ProductCard
         product={selectedProduct}
-        isVisible={showProductCard && selectedProduct !== null}
+        isVisible={showProductCard}
         onClose={handleCloseProductCard}
       />
     </div>
