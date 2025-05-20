@@ -93,6 +93,7 @@ const ReelViewer = ({ look, onComplete, isActive }) => {
   };
 
   const handleProductClick = (product) => {
+    console.log(product);
     setSelectedProduct(product);
     setShowProductCard(true);
   };
