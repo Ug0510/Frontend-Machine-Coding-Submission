@@ -1,35 +1,6 @@
 const data = {
   looks: [
     {
-      id: 1,
-      title: "Urban Street Style",
-      type: "video",
-      src: "/videos/look1.mp4",
-      products: [
-        {
-          id: 101,
-          name: "Indigo Kurti Set",
-          price: 899,
-          description: "Indigo printed cotton kurti with palazzo pants",
-          image: "/images/kurti1.png"
-        },
-        {
-          id: 102,
-          name: "Pink Kurti Set",
-          price: 1999,
-          description: "Floral printed rayon anarkali kurti with dupatta",
-          image: "/images/kurti2.png"
-        },
-        {
-          id: 103,
-          name: "orange Kurti set",
-          price: 799,
-          description: "Elegant green chikankari cotton kurti",
-          image: "/images/kurti3.png"
-        }
-      ]
-    },
-    {
       id: 2,
       title: "Summer Collection",
       type: "video",
@@ -55,6 +26,35 @@ const data = {
           price: 499,
           description: "Comfortable grey straight-cut cotton pants",
           image: "/images/cotton-pants.png"
+        }
+      ]
+    },
+    {
+      id: 1,
+      title: "Urban Street Style",
+      type: "video",
+      src: "/videos/look1.mp4",
+      products: [
+        {
+          id: 101,
+          name: "Indigo Kurti Set",
+          price: 899,
+          description: "Indigo printed cotton kurti with palazzo pants",
+          image: "/images/kurti1.png"
+        },
+        {
+          id: 102,
+          name: "Pink Kurti Set",
+          price: 1999,
+          description: "Floral printed rayon anarkali kurti with dupatta",
+          image: "/images/kurti2.png"
+        },
+        {
+          id: 103,
+          name: "orange Kurti set",
+          price: 799,
+          description: "Elegant green chikankari cotton kurti",
+          image: "/images/kurti3.png"
         }
       ]
     },
