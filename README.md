@@ -2,6 +2,9 @@
 
 A modern, mobile-first React application for showcasing fashion looks with interactive product annotations and a smooth reel-like experience.
 
+
+*Live Link (view project here):* <a href="https://tectonic-submission.udit-gupta.com" target="_blank">Take a peek!</a>
+
 ## Project Overview
 
 This project is a frontend implementation of a fashion e-commerce lookbook that allows users to browse through fashion looks (images and videos), interact with product annotations, and navigate to product detail pages. The application is built with a focus on smooth transitions, clean UI, and responsive design.
