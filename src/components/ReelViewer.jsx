@@ -12,6 +12,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "react-circular-progressbar/dist/styles.css";
 import "./ReelViewer.css";
+import { FiHeart, FiBookmark, FiShare } from 'react-icons/fi';
+// import { motion, AnimatePresence } from 'framer-motion';
 
 const ReelViewer = ({ look, onComplete, isActive }) => {
   const [playing, setPlaying] = useState(true);
@@ -22,6 +24,27 @@ const ReelViewer = ({ look, onComplete, isActive }) => {
   const playerRef = useRef(null);
   const timerRef = useRef(null);
   const [userInteracting, setUserInteracting] = useState(false);
+  const [liked, setLiked] = useState(false);
+  const [saved, setSaved] = useState(false);
+  const [showShareToast, setShowShareToast] = useState(false);
+
+  const handleLike = (e) => {
+    e.stopPropagation();
+    setLiked(!liked);
+  };
+
+  const handleSave = (e) => {
+    e.stopPropagation();
+    setSaved(!saved);
+  };
+
+  const handleShare = (e) => {
+    e.stopPropagation();
+    setShowShareToast(true);
+    setTimeout(() => {
+      setShowShareToast(false);
+    }, 3000);
+  };
 
   // Control video playback based on active state
   useEffect(() => {
@@ -177,6 +200,63 @@ const ReelViewer = ({ look, onComplete, isActive }) => {
         isVisible={showProductCard}
         onClose={handleCloseProductCard}
       />
+      <div className="lookbook-actions">
+        <motion.button
+          className="action-button"
+          onClick={handleLike}
+          whileTap={{ scale: 0.9 }}
+        >
+          <motion.div
+            animate={liked ? { scale: [1, 1.3, 1] } : {}}
+            transition={{ duration: 0.4 }}
+          >
+            {liked ? (
+              <FiHeart className="active"/>
+            ) : (
+              <FiHeart />
+            )}
+          </motion.div>
+          <span>2k</span>
+        </motion.button>
+
+        <motion.button
+          className="action-button"
+          onClick={handleSave}
+          whileTap={{ scale: 0.9 }}
+        >
+          <motion.div
+            animate={saved ? { scale: [1, 1.3, 1] } : {}}
+            transition={{ duration: 0.4 }}
+          >
+            {saved ? (
+               <FiBookmark className="active"/>
+            ) : (
+              <FiBookmark />
+            )}
+          </motion.div>
+          <span>500</span>
+        </motion.button>
+
+        <motion.button
+          className="action-button"
+          onClick={handleShare}
+          whileTap={{ scale: 0.9 }}
+        >
+          <FiShare />
+        </motion.button>
+      </div>
+
+      {showShareToast && (
+        <motion.div
+          className="toast-notification share-toast"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 20 }}
+          transition={{ duration: 0.3 }}
+        >
+          Video is shared, thanks for sharing
+        </motion.div>
+      )}
     </div>
   );
 };
