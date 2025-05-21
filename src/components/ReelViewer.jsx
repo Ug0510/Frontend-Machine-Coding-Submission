@@ -92,10 +92,10 @@ const ReelViewer = ({ look, onComplete, isActive }) => {
     setMuted(!muted);
   };
 
-  const handleProductClick = (product) => {
-    console.log(product);
-    setSelectedProduct(product);
-    setShowProductCard(true);
+  const handleProductClick = async (product) => {
+    // console.log(product);
+    await setSelectedProduct(product);
+    await setShowProductCard(true);
   };
 
   const handleCloseProductCard = () => {
